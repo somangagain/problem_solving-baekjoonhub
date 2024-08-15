@@ -5,8 +5,6 @@ using namespace std;
 int DX[4] = { 0, 0, 1, -1 };
 int DY[4] = { 1, -1, 0, 0 };
 
-bool V[51][2501];
-
 int main()
 {
     ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
@@ -15,11 +13,7 @@ int main()
     while (T--) {
         int M, N, K; cin >> M >> N >> K;
         
-        for (int y = 0; y < 51; y++) {
-            for (int x = 0; x < 2501; x++) {
-                V[y][x] = 1;
-            }
-        }
+        vector<vector<bool>> V(N, vector<bool>(M, 1));
 
         while (K--) {
             int x, y; cin >> x >> y;
